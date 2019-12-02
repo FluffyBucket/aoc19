@@ -1,4 +1,4 @@
-package main
+package day1
 
 import "fmt"
 import (
@@ -7,9 +7,10 @@ import (
 	"strconv"
 )
 
-func main() {
+func Main() {
+	fmt.Println("Day1")
 	day1 := 0
-	day2 := 0
+	day1p2 := 0
 	f, _ := os.Open("day1/day1.txt")
 	scanner := bufio.NewScanner(f)
 
@@ -18,11 +19,11 @@ func main() {
 		val,_ := strconv.Atoi(line)
 		day1 += (val / 3) - 2
 
-		day2 += fuelCalc(val)
+		day1p2 += fuelCalc(val)
 	}
 
 	fmt.Println(day1)
-	fmt.Println(day2)
+	fmt.Println(day1p2)
 }
 
 func fuelCalc(mass int) int {
